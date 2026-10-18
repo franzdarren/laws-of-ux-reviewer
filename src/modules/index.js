@@ -2,10 +2,12 @@ import LawsLessons from './laws/Lessons.jsx';
 import HeuristicsLessons from './heuristics/Lessons.jsx';
 import DesignLessons from './design/Lessons.jsx';
 import SusLessons from './sus/Lessons.jsx';
+import ResearchLessons from './research/Lessons.jsx';
 import { QUESTIONS as lawsQ } from './laws/questions.js';
 import { QUESTIONS as heuristicsQ } from './heuristics/questions.js';
 import { QUESTIONS as designQ } from './design/questions.js';
 import { QUESTIONS as susQ } from './sus/questions.js';
+import { QUESTIONS as researchQ } from './research/questions.js';
 
 export const MODULES = [
   {
@@ -39,5 +41,13 @@ export const MODULES = [
     blurb: 'The 10-item questionnaire, how to score it, and what a score means.',
     Lessons: SusLessons,
     questions: susQ,
+  },
+  {
+    id: 'research',
+    n: 5,
+    title: 'UX Research',
+    blurb: 'Research methods, when to use each, and the biases that skew results.',
+    Lessons: ResearchLessons,
+    questions: researchQ,
   },
 ];

@@ -674,6 +674,73 @@ function EmpathyMap({ spot = plain }) {
 }
 
 
+function InterviewScript({ spot = plain }) {
+  const q = (id, n, text) => (
+    <li>
+      <span className="iv-n">Q{n}</span>
+      <span {...spot(id, 'iv-q')}>{text}</span>
+    </li>
+  );
+  return (
+    <div className="iv-doc" role="group" aria-label="Interview guide for the new enrollment app, with five questions">
+      <b className="iv-title">Interview guide: New enrollment app</b>
+      <ol>
+        {q('q1', 1, 'Walk me through the last time you enrolled.')}
+        {q('q2', 2, "Don't you think the new schedule view is easier?")}
+        {q('q3', 3, 'What did you do when a section was full?')}
+        {q('q4', 4, 'How frustrating was the old portal?')}
+        {q('q5', 5, "Is there anything else you'd like to tell me?")}
+      </ol>
+    </div>
+  );
+}
+
+function ResearchPlan() {
+  return (
+    <Browser
+      url="docs.team/usability-test-plan"
+      label="Usability test plan for a new enrollment app. 1: participants are 5 classmates from our BSIT block. 2: script question: How much do you love the new dark mode? 3: notes: only write down comments that support the redesign. 4: the app's designer runs every session and introduces it as my app, I worked really hard on it."
+    >
+      <div className="rp">
+        <b className="rp-title">Usability test plan: New enrollment app</b>
+        <dl>
+          <div>
+            <dt>Goal</dt>
+            <dd>See if students can enroll in under 5 minutes.</dd>
+          </div>
+          <div>
+            <dt>Participants</dt>
+            <dd className="m-rel rp-box">
+              <Mark n={1} at="tr" />5 classmates from our BSIT block
+            </dd>
+          </div>
+          <div>
+            <dt>Script</dt>
+            <dd className="m-rel rp-box">
+              <Mark n={2} at="tr" />
+              Q1: "How much do you love the new dark mode?"
+            </dd>
+          </div>
+          <div>
+            <dt>Notes</dt>
+            <dd className="m-rel rp-box">
+              <Mark n={3} at="tr" />
+              Only write down comments that support the redesign.
+            </dd>
+          </div>
+          <div>
+            <dt>Moderator</dt>
+            <dd className="m-rel rp-box">
+              <Mark n={4} at="tr" />
+              The app's designer runs every session: "This is my app, I worked really hard on it!"
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </Browser>
+  );
+}
+
 export const FIGURES = {
   tinyPay: TinyPay,
   adBanner: AdBanner,
@@ -703,4 +770,6 @@ export const FIGURES = {
   dateFree: DateFree,
   datePicker: DatePicker,
   empathyMap: EmpathyMap,
+  interviewScript: InterviewScript,
+  researchPlan: ResearchPlan,
 };

@@ -7,8 +7,9 @@ import { QUESTIONS as laws } from '../src/modules/laws/questions.js';
 import { QUESTIONS as heuristics } from '../src/modules/heuristics/questions.js';
 import { QUESTIONS as design } from '../src/modules/design/questions.js';
 import { QUESTIONS as sus } from '../src/modules/sus/questions.js';
+import { QUESTIONS as research } from '../src/modules/research/questions.js';
 
-const MODULES = { laws, heuristics, design, sus };
+const MODULES = { laws, heuristics, design, sus, research };
 const figureSrc = readFileSync(new URL('../src/figures.jsx', import.meta.url), 'utf8');
 const hasFigure = (name) => new RegExp(`\\b${name}: \\w+,`).test(figureSrc);
 

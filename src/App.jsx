@@ -61,7 +61,7 @@ function Home() {
         <p className="eyebrow">ITE reviewer · prepared by R. Domantay</p>
         <h1>Laws of UX Reviewer</h1>
         <p className="lede">
-          Four modules on designing for people. Read the lessons, try the demos, then practice with screenshots, app case studies and
+          Five modules on designing for people. Read the lessons, try the demos, then practice with screenshots, app case studies and
           matching. Every wrong answer tells you why.
         </p>
       </div>

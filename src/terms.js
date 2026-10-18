@@ -4,6 +4,34 @@ const LAW_URL = (slug) => `https://lawsofux.com/${slug}/`;
 const NNG_HEURISTICS = 'https://www.nngroup.com/articles/ten-usability-heuristics/';
 const DSCHOOL = 'https://dschool.stanford.edu/resources/design-thinking-bootleg';
 const SUS_URL = 'https://measuringu.com/sus/';
+const NNG_METHODS = 'https://www.nngroup.com/articles/which-ux-research-methods/';
+const BIAS_URL = 'https://lawsofux.com/cognitive-bias/';
+
+const methods = {
+  interviews: 'User interviews',
+  surveys: 'Surveys',
+  'contextual-inquiry': 'Contextual inquiry',
+  'diary-study': 'Diary study',
+  'focus-group': 'Focus group',
+  'usability-test': 'Usability testing',
+  'card-sort': 'Card sorting',
+  'tree-test': 'Tree testing',
+  'ab-test': 'A/B testing',
+  analytics: 'Analytics',
+  'eye-tracking': 'Eye tracking',
+};
+
+const biases = {
+  'confirmation-bias': 'Confirmation bias',
+  'false-consensus': 'False-consensus effect',
+  'leading-question': 'Leading-question bias',
+  'social-desirability': 'Social desirability bias',
+  acquiescence: 'Acquiescence bias',
+  hawthorne: 'Hawthorne effect',
+  'sampling-bias': 'Sampling bias',
+  framing: 'Framing effect',
+  survivorship: 'Survivorship bias',
+};
 
 const laws = {
   'aesthetic-usability-effect': 'Aesthetic-Usability Effect',
@@ -73,10 +101,18 @@ export const TERMS = {
   severity: { name: 'Severity ratings', url: 'https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/' },
   'design-thinking': { name: 'Design thinking (d.school)', url: DSCHOOL },
   sus: { name: 'System Usability Scale', url: SUS_URL },
+  ...Object.fromEntries(Object.entries(methods).map(([k, name]) => [k, { name, url: NNG_METHODS }])),
+  ...Object.fromEntries(Object.entries(biases).map(([k, name]) => [k, { name, url: BIAS_URL }])),
+  'research-methods': { name: 'Which UX research methods (NN/g)', url: NNG_METHODS },
+  'five-users': { name: 'Why you only need 5 users (NN/g)', url: 'https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/' },
+  'card-sorting': { name: 'Card sorting (NN/g)', url: 'https://www.nngroup.com/articles/card-sorting-definition/' },
+  'leading-question': { name: biases['leading-question'], url: 'https://www.nngroup.com/articles/leading-questions/' },
 };
 
 export const LAW_SLUGS = Object.keys(laws);
 export const HEURISTIC_IDS = Object.keys(heuristics);
 export const STAGE_IDS = Object.keys(stages);
+export const METHOD_IDS = Object.keys(methods);
+export const BIAS_IDS = Object.keys(biases);
 
 export const termName = (key, labels) => labels?.[key] ?? TERMS[key]?.name ?? key;
